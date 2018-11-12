@@ -1,2 +1,2 @@
-# synthcal
-An electron calculator with a synthwave aesthetic.
+# SynthCal
+A calculator with a synthwave aesthetic – made using Electron and React.
