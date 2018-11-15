@@ -1,4 +1,4 @@
-let toPostfix = require("./postfix");
+let toPostfix = require("./toPostfix");
 
 describe(`toPostfix:`, () => {
   test(`toPostfix(tokens) should return ['5', '6', '3', '/', '84', '*', '+']`, () => {
