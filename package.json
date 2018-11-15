@@ -8,6 +8,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "test": "jest",
     "parcel-dev": "parcel ./src/index.html -d build/",
     "electron-dev": "ELECTRON_START_URL=http://localhost:1234 electron .",
     "dev": "yarn parcel-dev | yarn electron-dev",
@@ -31,6 +32,7 @@
     "electron": "^3.0.8",
     "electron-builder": "^20.34.0",
     "electron-reload": "^1.3.0",
+    "jest": "^23.6.0",
     "parcel": "^1.10.3",
     "react": "^16.6.1",
     "react-dom": "^16.6.1"
