@@ -9,7 +9,12 @@ if (process.env.ELECTRON_START_URL) {
 let window;
 
 const createWindow = () => {
-  let window = new BrowserWindow({ width: 800, height: 600 });
+  window = new BrowserWindow({
+    width: 240,
+    height: 416,
+    resizable: false,
+    fullscreen: false,
+  });
 
   const startUrl =
     process.env.ELECTRON_START_URL ||
