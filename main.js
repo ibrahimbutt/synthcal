@@ -16,6 +16,7 @@ const createWindow = () => {
     fullscreen: false,
     titleBarStyle: "hidden",
     show: false,
+    backgroundColor: "#3a48ee"
   });
 
   const startUrl =
