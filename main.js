@@ -14,6 +14,7 @@ const createWindow = () => {
     height: 416,
     resizable: false,
     fullscreen: false,
+    titleBarStyle: "hidden"
   });
 
   const startUrl =
