@@ -4,6 +4,9 @@ import styled from "styled-components";
 import Display from "../Display";
 import Buttons from "../Buttons";
 
+const webFrame = window.require("electron").webFrame;
+webFrame.setVisualZoomLevelLimits(1, 1);
+webFrame.setLayoutZoomLevelLimits(0, 0);
 
 class App extends React.Component {
   state = {
