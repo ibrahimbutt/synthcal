@@ -14,7 +14,8 @@ const createWindow = () => {
     height: 416,
     resizable: false,
     fullscreen: false,
-    titleBarStyle: "hidden"
+    titleBarStyle: "hidden",
+    show: false,
   });
 
   const startUrl =
@@ -26,6 +27,13 @@ const createWindow = () => {
     });
 
   window.loadURL(startUrl);
+
+  let bounceID = app.dock.bounce();
+
+  window.on("ready-to-show", function() {
+    window.show();
+    app.dock.cancelBounce(bounceID);
+  });
 
   window.on("closed", function() {
     window = null;
