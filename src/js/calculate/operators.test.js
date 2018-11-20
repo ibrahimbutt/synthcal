@@ -26,8 +26,8 @@ describe("Operator Tests:", () => {
   });
 
   describe("Divide:", () => {
-    test(`OPERATORS.divide.symbol should equal "/"`, () => {
-      expect(OPERATORS.divide.symbol).toBe("/");
+    test(`OPERATORS.divide.symbol should equal "÷"`, () => {
+      expect(OPERATORS.divide.symbol).toBe("÷");
     });
     test(`OPERATORS.divide.precedence should equal 3`, () => {
       expect(OPERATORS.divide.precedence).toBe(3);
@@ -38,8 +38,8 @@ describe("Operator Tests:", () => {
   });
 
   describe("Multiply:", () => {
-    test(`OPERATORS.multiply.symbol should equal "*"`, () => {
-      expect(OPERATORS.multiply.symbol).toBe("*");
+    test(`OPERATORS.multiply.symbol should equal "×"`, () => {
+      expect(OPERATORS.multiply.symbol).toBe("×");
     });
     test(`OPERATORS.multiply.precedence should equal 3`, () => {
       expect(OPERATORS.multiply.precedence).toBe(3);
