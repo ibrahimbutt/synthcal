@@ -12,7 +12,7 @@ const OPERATORS = {
     calculate: (minuend, subtrahend) => Number(Big(minuend).minus(subtrahend))
   },
   divide: {
-    symbol: "/",
+    symbol: "÷",
     precedence: 3,
     calculate: (dividend, divisor) => {
       Big.DP = 2;
@@ -20,7 +20,7 @@ const OPERATORS = {
     }
   },
   multiply: {
-    symbol: "*",
+    symbol: "×",
     precedence: 3,
     calculate: (factorA, factorB) => Number(Big(factorA).times(factorB))
   }
