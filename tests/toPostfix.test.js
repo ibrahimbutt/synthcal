@@ -1,4 +1,4 @@
-let toPostfix = require("./toPostfix");
+let toPostfix = require("../src/js/calculate/toPostfix");
 
 describe(`toPostfix:`, () => {
   test(`toPostfix(tokens) should return ['5', '6', '3', '÷', '84', '×', '+']`, () => {
