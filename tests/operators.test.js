@@ -1,4 +1,4 @@
-const OPERATORS = require("./OPERATORS");
+const OPERATORS = require("../src/js/calculate/operators");
 
 describe("Operator Tests:", () => {
   describe("Add:", () => {

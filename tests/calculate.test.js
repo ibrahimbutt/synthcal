@@ -1,4 +1,4 @@
-const calculate = require("./calculate");
+const calculate = require("../src/js/calculate/calculate");
 
 describe("Calculate:", () => {
   test('calculate(["15", "×", "5", "÷", "50", "-", "456", "+", "10000"]) should return 20', () => {

@@ -1,4 +1,4 @@
-let postfixEval = require("./postfixEval");
+let postfixEval = require("../src/js/calculate/postfixEval");
 
 describe(`postfixEval:`, () => {
   test(`postfixEval(tokens) should return 173`, () => {
