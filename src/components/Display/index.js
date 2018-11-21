@@ -18,6 +18,7 @@ export default styled(Display)`
   line-height: 36px;
   z-index: 1;
   user-select: none;
+  -webkit-app-region: drag;
 
   &::before {
     content: attr(content);
