@@ -4,6 +4,8 @@ import styled from "styled-components";
 import Display from "../Display";
 import Buttons from "../Buttons";
 
+const Big = require("big.js");
+const calculate = require("../../js/calculate/calculate");
 const webFrame = window.require("electron").webFrame;
 webFrame.setVisualZoomLevelLimits(1, 1);
 webFrame.setLayoutZoomLevelLimits(0, 0);
