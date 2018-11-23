@@ -10,7 +10,10 @@ webFrame.setLayoutZoomLevelLimits(0, 0);
 
 class App extends React.Component {
   state = {
-    display: 458
+    input: [],
+    operatorPressedLast: false,
+    display: "0"
+  };
   };
 
   render() {
