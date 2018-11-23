@@ -58,6 +58,15 @@ class App extends React.Component {
     }
   };
 
+  onPercentagePress = () => {
+    if (this.state.display !== "0")
+      this.setState({
+        display: Number(
+          this.removeFormatting(this.state.display) / 100
+        ).toLocaleString("en")
+      });
+  };
+
   };
 
   render() {
