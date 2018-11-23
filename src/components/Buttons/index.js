@@ -27,7 +27,11 @@ const buttonsContent = [
 const Buttons = props => (
   <div className={props.className}>
     {buttonsContent.map((content, index) => (
-      <Button key={`button-${index}`} content={content} />
+      <Button
+        key={`button-${index}`}
+        content={content}
+        handleButtonPress={props.handleButtonPress}
+      />
     ))}
   </div>
 );
