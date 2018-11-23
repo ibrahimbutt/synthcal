@@ -117,6 +117,21 @@ class App extends React.Component {
       });
     }
   };
+
+  handleButtonPress = button => {
+    if (button === "AC") {
+      this.onACPress();
+    } else if (!isNaN(button)) {
+      this.onNumberPress(button);
+    } else if (button === ".") {
+      this.onDecimalPress();
+    } else if (button === "%") {
+      this.onPercentagePress();
+    } else if (button === "+/-") {
+      this.onNegatePress();
+    } else {
+      this.onOperatorPress(button);
+    }
   };
 
   render() {
