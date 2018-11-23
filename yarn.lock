@@ -3547,6 +3547,11 @@ hosted-git-info@^2.1.4, hosted-git-info@^2.7.1:
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.7.1.tgz#97f236977bd6e125408930ff6de3eec6281ec047"
   integrity sha512-7T/BxH19zbcCTa8XkMlbK5lTo1WtgkFi3GvdWEyNuc4Vex7/9Dqbnpsf4JMydcfj9HCg4zUWFTL3Za6lapg5/w==
 
+hotkeys-js@^3.3.8:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/hotkeys-js/-/hotkeys-js-3.4.1.tgz#231234030ed677449a0c5924becf8c58855d7ead"
+  integrity sha512-TgztcBNZlzwadbcU9KJNcHnpnI0o+ynpS+oQfeuz7lKC0B4rCkj5QaXRfnSmipsFC9QUIr6Bgu0/wl3C0kmJUA==
+
 hsl-regex@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/hsl-regex/-/hsl-regex-1.0.0.tgz#d49330c789ed819e276a4c0d272dffa30b18fe6e"
@@ -6567,6 +6572,13 @@ react-dom@^16.6.1:
     object-assign "^4.1.1"
     prop-types "^15.6.2"
     scheduler "^0.11.0"
+
+react-hot-keys@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/react-hot-keys/-/react-hot-keys-1.2.2.tgz#079dcecb15db7fa669300eeb844cfda8f920d4a4"
+  integrity sha512-6jNsx6kthQm+xEeSdys6esX3eJSBB+JoacHWTORkUIeK7nuZHYdb+GUi/Ppx/FdquNaWB2xwhHaRA0W5zeMn3w==
+  dependencies:
+    hotkeys-js "^3.3.8"
 
 react-is@^16.6.0:
   version "16.6.3"
