@@ -19,6 +19,14 @@ class App extends React.Component {
     return String(input).replace(/,/g, "");
   };
 
+  onACPress = () => {
+    this.setState({
+      input: [],
+      display: "0",
+      operatorPressedLast: false
+    });
+  };
+
   };
 
   render() {
