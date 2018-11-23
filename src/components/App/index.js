@@ -17,86 +17,85 @@ class App extends React.Component {
     display: "0"
   };
 
-  removeFormatting = input => {
-    return String(input).replace(/,/g, "");
-  };
+  removeFormatting = input => input.replace(/,/g, "");
 
-  onACPress = () => {
+  onACPress = () =>
     this.setState({
       input: [],
       display: "0",
       operatorPressedLast: false
     });
-  };
 
   onNumberPress = button => {
-    if (button === "0" && this.state.display === "0") {
+    const formattedDisplay = this.state.display;
+    const display = this.removeFormatting(this.state.display);
+
+    if (button === "0" && !display) {
       return false;
     } else if (
-      this.removeFormatting(this.state.display.length) > 10 &&
+      formattedDisplay.length > 10 &&
       !this.state.operatorPressedLast
     ) {
       return false;
-    } else if (this.state.display === "0" || this.state.operatorPressedLast) {
+    } else if (!display || this.state.operatorPressedLast) {
       this.setState({ display: button, operatorPressedLast: false });
     } else {
-      let display = this.removeFormatting(this.state.display) + button;
+      const newDisplay = display + button;
       this.setState({
         display:
-          display > 999999999
-            ? Big(display).toExponential(2)
-            : Number(display).toLocaleString("en")
+          newDisplay > 999999999
+            ? Big(newDisplay).toExponential(2)
+            : Number(newDisplay).toLocaleString("en")
       });
     }
   };
 
   onDecimalPress = () => {
-    if (this.state.display === "0" || this.state.operatorPressedLast) {
+    const display = this.removeFormatting(this.state.display);
+
+    if (!display || this.state.operatorPressedLast) {
       this.setState({ display: "0.", operatorPressedLast: false });
-    } else if (!this.state.display.includes(".")) {
-      this.setState({
-        display: this.state.display + "."
-      });
+    } else if (!display.includes(".")) {
+      this.setState({ display: display + "." });
     }
   };
 
   onPercentagePress = () => {
-    if (this.state.display !== "0")
+    const display = this.removeFormatting(this.state.display);
+
+    if (display)
       this.setState({
-        display: Number(
-          this.removeFormatting(this.state.display) / 100
-        ).toLocaleString("en")
+        display: Number(display / 100).toLocaleString("en")
       });
   };
 
   onNegatePress = () => {
-    this.state.display !== "0"
-      ? Number(this.removeFormatting(this.state.display)) > 0
-        ? this.setState({
-            display: "-" + this.state.display
-          })
-        : this.setState({
-            display: this.state.display.replace(/-/g, "")
-          })
+    const display = this.removeFormatting(this.state.display);
+
+    display
+      ? display > 0
+        ? this.setState({ display: "-" + display })
+        : this.setState({ display: display.replace(/-/g, "") })
       : false;
   };
 
   onOperatorPress = button => {
-    if (this.state.input.length === 0 && this.state.display === "0") {
+    const display = this.removeFormatting(this.state.display);
+    const input = this.state.input;
+
+    if (!input.length && !display) {
       return false;
     } else if (this.state.operatorPressedLast && button !== "=") {
       this.setState({
-        input: [this.state.input[0], button]
+        input: [input[0], button]
       });
-    } else if (this.state.input.length === 0) {
+    } else if (!input.length) {
       this.setState({
-        input: [this.removeFormatting(this.state.display), button],
+        input: [display, button],
         operatorPressedLast: true
       });
     } else if (button !== "=") {
-      const sum = calculate(
-        this.state.input.concat(this.removeFormatting(this.state.display))
-      );
+      const sum = calculate(input.concat(display));
       this.setState({
         input: [sum, button],
         display:
@@ -106,9 +105,7 @@ class App extends React.Component {
         operatorPressedLast: true
       });
     } else {
-      const sum = calculate(
-        this.state.input.concat(this.removeFormatting(this.state.display))
-      );
+      const sum = calculate(input.concat(display));
       this.setState({
         input: [sum],
         display:
@@ -121,18 +118,25 @@ class App extends React.Component {
   };
 
   handleButtonPress = button => {
-    if (button === "AC") {
-      this.onACPress();
-    } else if (!isNaN(button)) {
+    if (!isNaN(button)) {
       this.onNumberPress(button);
-    } else if (button === ".") {
-      this.onDecimalPress();
-    } else if (button === "%") {
-      this.onPercentagePress();
-    } else if (button === "+/-") {
-      this.onNegatePress();
     } else {
-      this.onOperatorPress(button);
+      switch (button) {
+        case "AC":
+          this.onACPress();
+          break;
+        case ".":
+          this.onDecimalPress();
+          break;
+        case "%":
+          this.onPercentagePress();
+          break;
+        case "+/-":
+          this.onNegatePress();
+          break;
+        default:
+          this.onOperatorPress(button);
+      }
     }
   };
 
