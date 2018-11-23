@@ -19,8 +19,8 @@ class Button extends React.Component {
     const content = this.props.content;
     let hotkey;
 
-    if (!isNaN(this.props.content)) {
-      hotkey = this.props.content;
+    if (!isNaN(content)) {
+      hotkey = content;
     } else {
       switch (content) {
         case !isNaN(content):
