@@ -1,7 +1,7 @@
 {
   "name": "synthcal",
   "description": "A calculator with a synthwave aesthetic",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "main": "main.js",
   "repository": "https://github.com/ibrahimbutt/synthcal.git",
   "author": "Ibrahim Butt <ibrahimbutt@me.com>",
