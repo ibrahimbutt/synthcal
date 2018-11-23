@@ -67,6 +67,17 @@ class App extends React.Component {
       });
   };
 
+  onNegatePress = () => {
+    this.state.display !== "0"
+      ? Number(this.removeFormatting(this.state.display)) > 0
+        ? this.setState({
+            display: "-" + this.state.display
+          })
+        : this.setState({
+            display: this.state.display.replace(/-/g, "")
+          })
+      : false;
+  };
   };
 
   render() {
