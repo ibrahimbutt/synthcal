@@ -20,7 +20,10 @@ class Button extends React.Component {
             ? `${this.props.className} active`
             : `${this.props.className}`
         }
-        onClick={this.toggleAnimation}
+        onClick={() => {
+          this.props.handleButtonPress(this.props.content);
+          this.toggleAnimation();
+        }}
         content={this.props.content}
       >
         {this.props.content}

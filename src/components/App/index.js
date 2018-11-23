@@ -140,7 +140,7 @@ class App extends React.Component {
     return (
       <div className={this.props.className}>
         <Display content={this.state.display} />
-        <Buttons />
+        <Buttons handleButtonPress={this.handleButtonPress} />
       </div>
     );
   }
