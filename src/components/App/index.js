@@ -48,6 +48,16 @@ class App extends React.Component {
     }
   };
 
+  onDecimalPress = () => {
+    if (this.state.display === "0" || this.state.operatorPressedLast) {
+      this.setState({ display: "0.", operatorPressedLast: false });
+    } else if (!this.state.display.includes(".")) {
+      this.setState({
+        display: this.state.display + "."
+      });
+    }
+  };
+
   };
 
   render() {
