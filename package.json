@@ -19,7 +19,8 @@
   },
   "build": {
     "productName": "SynthCal",
-    "appId": "com.synthcal",
+    "appId": "com.electron.synthcal",
+    "copyright": "Copyright © year ${author}",
     "mac": {
       "category": "public.app-category.utilities"
     },
