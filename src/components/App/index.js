@@ -14,6 +14,11 @@ class App extends React.Component {
     operatorPressedLast: false,
     display: "0"
   };
+
+  removeFormatting = input => {
+    return String(input).replace(/,/g, "");
+  };
+
   };
 
   render() {
