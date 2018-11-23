@@ -78,6 +78,45 @@ class App extends React.Component {
           })
       : false;
   };
+
+  onOperatorPress = button => {
+    if (this.state.input.length === 0 && this.state.display === "0") {
+      return false;
+    } else if (this.state.operatorPressedLast && button !== "=") {
+      this.setState({
+        input: [this.state.input[0], button]
+      });
+    } else if (this.state.input.length === 0) {
+      this.setState({
+        input: [this.removeFormatting(this.state.display), button],
+        operatorPressedLast: true
+      });
+    } else if (button !== "=") {
+      const sum = calculate(
+        this.state.input.concat(this.removeFormatting(this.state.display))
+      );
+      this.setState({
+        input: [sum, button],
+        display:
+          sum > 999999999
+            ? Big(sum).toExponential(2)
+            : Number(sum).toLocaleString("en"),
+        operatorPressedLast: true
+      });
+    } else {
+      const sum = calculate(
+        this.state.input.concat(this.removeFormatting(this.state.display))
+      );
+      this.setState({
+        input: [sum],
+        display:
+          sum > 999999999
+            ? Big(sum).toExponential(2)
+            : Number(sum).toLocaleString("en"),
+        operatorPressedLast: true
+      });
+    }
+  };
   };
 
   render() {
