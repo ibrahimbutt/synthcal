@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import Hotkeys from "react-hot-keys";
 
 class Button extends React.Component {
   state = {
-    animate: false
+    animate: false,
+    hotkey: null
   };
 
   toggleAnimation = () => {
@@ -12,22 +14,76 @@ class Button extends React.Component {
       this.setState({ animate: false });
     }, 750);
   };
+
+  componentWillMount() {
+    const content = this.props.content;
+    let hotkey;
+
+    if (!isNaN(this.props.content)) {
+      hotkey = this.props.content;
+    } else {
+      switch (content) {
+        case !isNaN(content):
+          hotkey = content;
+        case "+":
+          hotkey = "a";
+          break;
+        case "-":
+          hotkey = "s";
+          break;
+        case "÷":
+          hotkey = "d";
+          break;
+        case "×":
+          hotkey = "f";
+          break;
+        case "%":
+          hotkey = "j";
+          break;
+        case "+/-":
+          hotkey = "k";
+          break;
+        case ".":
+          hotkey = ".";
+          break;
+        case "=":
+          hotkey = "Enter";
+          break;
+        case "AC":
+          hotkey = "r";
+          break;
+        default:
+          null;
+      }
+    }
+
+    this.setState({ hotkey });
+  }
+
   render() {
     return (
-      <div
-        className={
-          this.state.animate
-            ? `${this.props.className} active`
-            : `${this.props.className}`
-        }
-        onClick={() => {
+      <Hotkeys
+        keyName={this.state.hotkey}
+        onKeyDown={() => {
           this.props.handleButtonPress(this.props.content);
           this.toggleAnimation();
         }}
-        content={this.props.content}
       >
-        {this.props.content}
-      </div>
+        <div
+          className={
+            this.state.animate
+              ? `${this.props.className} active`
+              : `${this.props.className}`
+          }
+          onClick={() => {
+            this.props.handleButtonPress(this.props.content);
+            this.toggleAnimation();
+          }}
+          content={this.props.content}
+        >
+          {this.props.content}
+        </div>
+      </Hotkeys>
     );
   }
 }
