@@ -15,6 +15,11 @@ class Button extends React.Component {
     }, 750);
   };
 
+  handleClick = () => {
+    this.props.handleButtonPress(this.props.content);
+    this.toggleAnimation();
+  };
+
   componentWillMount() {
     const content = this.props.content;
     let hotkey;
@@ -62,23 +67,14 @@ class Button extends React.Component {
 
   render() {
     return (
-      <Hotkeys
-        keyName={this.state.hotkey}
-        onKeyDown={() => {
-          this.props.handleButtonPress(this.props.content);
-          this.toggleAnimation();
-        }}
-      >
+      <Hotkeys keyName={this.state.hotkey} onKeyDown={this.handleClick}>
         <div
           className={
             this.state.animate
               ? `${this.props.className} active`
               : `${this.props.className}`
           }
-          onClick={() => {
-            this.props.handleButtonPress(this.props.content);
-            this.toggleAnimation();
-          }}
+          onClick={this.handleClick}
           content={this.props.content}
         >
           {this.props.content}
