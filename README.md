@@ -1,4 +1,4 @@
-# SynthCal [![Maintainability](https://api.codeclimate.com/v1/badges/00838d0a90c64c2eb02f/maintainability)](https://codeclimate.com/github/ibrahimbutt/synthcal/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/00838d0a90c64c2eb02f/test_coverage)](https://codeclimate.com/github/ibrahimbutt/synthcal/test_coverage)
+# SynthCal [![Build Status](https://travis-ci.org/ibrahimbutt/synthcal.svg?branch=master)](https://travis-ci.org/ibrahimbutt/synthcal) [![Maintainability](https://api.codeclimate.com/v1/badges/00838d0a90c64c2eb02f/maintainability)](https://codeclimate.com/github/ibrahimbutt/synthcal/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/00838d0a90c64c2eb02f/test_coverage)](https://codeclimate.com/github/ibrahimbutt/synthcal/test_coverage)
 
 A desktop calculator with a synthwave aesthetic. Made using Electron and React.
 
