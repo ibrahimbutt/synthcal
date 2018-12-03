@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "jest",
+    "test": "jest --coverage",
     "parcel-dev": "parcel ./src/index.html -d build/",
     "electron-dev": "ELECTRON_START_URL=http://localhost:1234 electron .",
     "dev": "yarn parcel-dev | yarn electron-dev",
