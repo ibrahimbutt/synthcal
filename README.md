@@ -1,4 +1,4 @@
-# SynthCal
+# SynthCal [![Maintainability](https://api.codeclimate.com/v1/badges/00838d0a90c64c2eb02f/maintainability)](https://codeclimate.com/github/ibrahimbutt/synthcal/maintainability)
 
 A desktop calculator with a synthwave aesthetic. Made using Electron and React.
 
