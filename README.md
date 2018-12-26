@@ -6,7 +6,7 @@ A desktop calculator with a synthwave aesthetic. Made using Electron and React.
 
 ## Installation
 
-Download and install the latest application image from [releases](https://github.com/ibrahimbutt/synthcal/releases).
+Download and install the latest version from [releases](https://github.com/ibrahimbutt/synthcal/releases).
 
 ## Development Setup
 
